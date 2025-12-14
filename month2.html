@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Month 2 💌</title>
+<style>
+body {
+  background: #000;
+  color: #fff;
+  font-family: Georgia;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.box {
+  width: 320px;
+  padding: 25px;
+  background: #111;
+  border-radius: 12px;
+  text-align: center;
+}
+#msg { display: none; }
+</style>
+</head>
+<body>
+
+<div class="box">
+  <h2>Month 2 🔐</h2>
+  <p>Riddle:</p>
+  <p><i>The first thing I noticed about you?</i></p>
+
+  <input id="key">
+  <button onclick="openLetter()">Unlock</button>
+
+  <div id="msg">
+    <p>
+      Another month, another reminder
+      that you matter more than you know 🤍
+    </p>
+  </div>
+</div>
+
+<script>
+function openLetter() {
+  if (document.getElementById("key").value.toLowerCase() === "smile") {
+    document.getElementById("msg").style.display = "block";
+  } else {
+    alert("Not yet 🌙");
+  }
+}
+</script>
+
+</body>
+</html>
