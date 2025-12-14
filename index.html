@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You 💌</title>
+<style>
+body {
+  background: #0f0f0f;
+  color: #fff;
+  font-family: 'Georgia', serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+.card {
+  background: #1c1c1c;
+  padding: 30px;
+  border-radius: 12px;
+  width: 300px;
+}
+input {
+  padding: 10px;
+  width: 90%;
+  border-radius: 8px;
+  border: none;
+}
+button {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+  background: #ff6f91;
+  color: #fff;
+  font-size: 16px;
+}
+#letter {
+  display: none;
+  margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h2>Month 1 💭</h2>
+  <p>Solve this to unlock your letter</p>
+  <p><i>What word describes our first late night talks?</i></p>
+
+  <input id="answer" placeholder="Your answer">
+  <button onclick="unlock()">Unlock 💌</button>
+
+  <div id="letter">
+    <p>
+      Dear You,<br><br>
+      This letter exists because you exist.
+      Every late night, every random talk —
+      it all led here.<br><br>
+      This is only the beginning 🤍
+    </p>
+  </div>
+</div>
+
+<script>
+function unlock() {
+  const correct = "special"; // change answer here
+  const user = document.getElementById("answer").value.toLowerCase();
+
+  if (user === correct) {
+    document.getElementById("letter").style.display = "block";
+  } else {
+    alert("Try again 💭");
+  }
+}
+</script>
+
+</body>
+</html>
