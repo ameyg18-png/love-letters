@@ -1,273 +1,156 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For My Gargudi 💗</title>
+<title>For Gargudi 💗</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400&family=Playfair+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
   min-height:100vh;
-  background:linear-gradient(135deg,#ffdde1,#ee9ca7);
-  font-family:'Poppins',sans-serif;
   display:flex;
   justify-content:center;
   align-items:center;
-  overflow-x:hidden;
-  color:#fff;
+  background:linear-gradient(135deg,#fbd3e9,#bb377d);
+  font-family:'Poppins',sans-serif;
 }
 
-.container{
-  background:rgba(255,255,255,0.18);
-  backdrop-filter:blur(15px);
-  border-radius:26px;
-  padding:30px;
+.card{
   width:90%;
-  max-width:420px;
+  max-width:380px;
+  background:rgba(255,255,255,0.18);
+  backdrop-filter:blur(14px);
+  border-radius:24px;
+  padding:28px;
   text-align:center;
-  box-shadow:0 0 40px rgba(255,182,193,.4);
-  animation:fadeIn 1.5s ease;
+  color:white;
+  box-shadow:0 20px 40px rgba(0,0,0,.15);
+  animation:fade 1.2s ease;
 }
 
 h1{
   font-family:'Dancing Script',cursive;
-  font-size:36px;
+  font-size:34px;
+  margin-bottom:10px;
 }
 
-.section{margin-top:25px;}
-
-.love-text{
-  font-family:'Playfair Display',serif;
+p{
   font-size:14px;
   line-height:1.7;
+  opacity:.95;
 }
 
+.section{margin-top:22px;}
+
 button{
-  background:linear-gradient(135deg,#ff9a9e,#fad0c4);
   border:none;
-  padding:12px;
+  background:rgba(255,255,255,.25);
+  color:white;
+  padding:10px;
   width:100%;
-  border-radius:16px;
-  font-size:15px;
-  margin-top:10px;
+  border-radius:14px;
+  font-size:14px;
+  margin-top:8px;
   cursor:pointer;
-  transition:transform .3s;
 }
-button:hover{transform:scale(1.05);}
+
+button:hover{background:rgba(255,255,255,.35);}
+
+.heart{
+  font-size:36px;
+  animation:float 1.5s infinite;
+  cursor:pointer;
+}
+
+video{
+  width:100%;
+  border-radius:18px;
+  filter:blur(8px);
+  transition:1s;
+}
+
+video.show{filter:blur(0);}
 
 input{
   width:90%;
   padding:10px;
-  border-radius:12px;
   border:none;
+  border-radius:12px;
+  margin-top:8px;
   outline:none;
-  margin-top:10px;
 }
 
-.hidden{display:none;}
-
-#heart,#gift{
-  font-size:32px;
-  cursor:pointer;
-  animation:bounce 1.5s infinite;
-}
-
-.video{
-  width:100%;
-  border-radius:18px;
-  filter:blur(10px);
-  transition:filter 1s;
-}
-
-.video.show{
-  filter:blur(0);
-}
-
-.floating-name{
-  position:fixed;
-  top:10px;
-  left:50%;
-  transform:translateX(-50%);
-  font-family:'Dancing Script',cursive;
-  font-size:22px;
-  opacity:.6;
-  animation:float 4s ease-in-out infinite;
-}
-
-@keyframes bounce{50%{transform:translateY(-10px);}}
-@keyframes float{50%{transform:translate(-50%,-10px);}}
-@keyframes fadeIn{from{opacity:0;transform:translateY(15px);}to{opacity:1;transform:translateY(0);}}
+@keyframes float{50%{transform:translateY(-8px);}}
+@keyframes fade{from{opacity:0;transform:translateY(15px);}to{opacity:1;}}
 </style>
 </head>
 
 <body>
 
-<div class="floating-name">Gargudi 💗</div>
+<div class="card">
 
-<div class="container">
+<h1>My Gargudi 💗</h1>
 
-<h1>My Dear Gargudi 💗</h1>
-
-<!-- LOVE LETTER -->
-<div class="section love-text">
-My dear Gargudi,<br><br>
-I know we are far away from each other, but you are still the closest to my heart.
-I love you so much, my princess, that I don’t even have enough words to explain it.
-Every thought of you feels warm, comforting, and safe — like home.<br><br>
-
-No matter the distance, my heart always chooses you.
-Every day. Every moment.
-I want you to be my forever, and I’ll choose you again and again without hesitation.
-You are my happiness, my peace, and my most precious person.<br><br>
-
-I love you forever 🫶🏻💗
-</div>
-
-<!-- GAME 1 -->
-<div class="section">
-<h3>🎯 Pick the Right One</h3>
-<button onclick="wrong()">Pizza 🍕</button>
-<button onclick="correct()">You 💗</button>
-<button onclick="wrong()">Sleep 😴</button>
-</div>
-
-<!-- GAME 2 -->
-<div class="section">
-<h3>💭 Choose Wisely</h3>
-<button onclick="wrong()">Temporary</button>
-<button onclick="correct()">Forever ♾️</button>
-</div>
-
-<!-- GAME 3 -->
-<div class="section">
-<h3>🔐 Secret Name</h3>
-<input id="secret" placeholder="What do I call you?">
-<button onclick="checkSecret()">Check</button>
-<p id="secretMsg" class="hidden">Of course 🥹💗</p>
-</div>
-
-<!-- GAME 4 -->
-<div class="section">
-<h3>💗 Catch My Heart</h3>
-<div id="heart" onclick="catchHeart()">💗</div>
-</div>
-
-<!-- GAME 5 -->
-<div class="section">
-<h3>💌 Surprise Line</h3>
-<button onclick="randomLove()">Tap Me</button>
-<p id="randomText"></p>
-</div>
-
-<!-- GIFT -->
-<div class="section">
-<h3>🎁 A Gift For You</h3>
-<div id="gift" onclick="openGift()">🎁</div>
-<p id="giftMsg" class="hidden">
-You are my favourite gift life gave me 🥹💗
+<p>
+My dear Gargudi,  
+even though we are far away, you are always close to my heart.  
+I choose you every day, in every moment, without doubt.  
+You are my comfort, my happiness, my forever.  
+I love you more than words can explain 🫶🏻
 </p>
+
+<!-- FUN TAP -->
+<div class="section">
+<div class="heart" onclick="tapHeart()">💗</div>
+<p id="tapMsg"></p>
+</div>
+
+<!-- CHOICE -->
+<div class="section">
+<p>Choose one:</p>
+<button onclick="right()">You 💗</button>
+<button onclick="wrong()">Anything Else</button>
+</div>
+
+<!-- SECRET -->
+<div class="section">
+<input id="secret" placeholder="What do I call you?">
+<button onclick="check()">Check</button>
+<p id="secretMsg"></p>
 </div>
 
 <!-- VIDEO -->
 <div class="section">
-<h3>🎥 A Message Just For You</h3>
-<video id="loveVideo" class="video" controls>
+<p>A small message 🎥</p>
+<video id="vid" controls>
   <source src="love.mp4" type="video/mp4">
 </video>
-<button onclick="revealVideo()">Reveal & Play 💗</button>
-</div>
-
-<!-- MOOD -->
-<div class="section">
-<button onclick="switchMood()">Change Mood 🎨</button>
+<button onclick="reveal()">Reveal & Play</button>
 </div>
 
 </div>
-
-<!-- MUSIC -->
-<button id="musicBtn" style="position:fixed;bottom:20px;right:20px;border:none;border-radius:50%;padding:14px;background:#ffd1dc;">🎵</button>
-<audio id="bgm" loop>
-<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_9c0c8bcb35.mp3">
-</audio>
 
 <script>
-function wrong(){alert("Nope 😛 try again");}
-function correct(){sparkle();}
-
-function checkSecret(){
- if(document.getElementById("secret").value.toLowerCase().includes("gargudi")){
-  document.getElementById("secretMsg").classList.remove("hidden");
-  sparkle();
- } else alert("Think sweeter 💗");
+function tapHeart(){
+ document.getElementById("tapMsg").innerText="You tapped my heart 🥹💗";
 }
 
-function catchHeart(){
- sparkle();
- alert("You caught my heart 🥹💗");
+function right(){alert("Always you 💗");}
+function wrong(){alert("Nope 😛");}
+
+function check(){
+ const s=document.getElementById("secret").value.toLowerCase();
+ document.getElementById("secretMsg").innerText=
+ s.includes("gargudi")?"Of course 🫶🏻":"Think sweeter 💗";
 }
 
-const lines=[
-"I choose you. Always 💗",
-"You feel like home 🤍",
-"Distance means nothing",
-"My forever has your name",
-"You are my peace"
-];
-
-function randomLove(){
- document.getElementById("randomText").innerText=
- lines[Math.floor(Math.random()*lines.length)];
- sparkle();
-}
-
-function openGift(){
- document.getElementById("giftMsg").classList.remove("hidden");
- sparkle();
-}
-
-function revealVideo(){
- const v=document.getElementById("loveVideo");
+function reveal(){
+ const v=document.getElementById("vid");
  v.classList.add("show");
  v.play();
- sparkle();
 }
-
-function sparkle(){
- for(let i=0;i<25;i++){
-  const h=document.createElement("div");
-  h.innerHTML="💗";
-  h.style.position="fixed";
-  h.style.left=Math.random()*100+"vw";
-  h.style.top="-10px";
-  h.style.fontSize="14px";
-  h.style.animation="fall 2.5s linear";
-  document.body.appendChild(h);
-  setTimeout(()=>h.remove(),2500);
- }
-}
-
-document.getElementById("musicBtn").onclick=()=>{
- const m=document.getElementById("bgm");
- m.paused?m.play():m.pause();
-};
-
-let moods=[
-"linear-gradient(135deg,#ffdde1,#ee9ca7)",
-"linear-gradient(135deg,#8360c3,#2ebf91)",
-"linear-gradient(135deg,#0f2027,#203a43,#2c5364)"
-];
-let i=0;
-function switchMood(){
- i=(i+1)%moods.length;
- document.body.style.background=moods[i];
-}
-
-const style=document.createElement("style");
-style.innerHTML=`@keyframes fall{to{transform:translateY(110vh);opacity:0}}`;
-document.head.appendChild(style);
 </script>
 
 </body>
